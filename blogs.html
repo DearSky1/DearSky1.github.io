@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Bloggy - Personal Blog Template</title>
+        <title>Blog-DearSky</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -89,60 +89,6 @@
 
             <!-- Blog Detail Start -->
             <div id="bodydiv">Loading......</div>
-            <!--<div class="container py-5 px-2 bg-white">
-                <div class="row px-4">
-                    <div class="col-12">
-                        <img class="img-fluid mb-4" src="/img/MyWebSite1.jpg" alt="Image">
-                        <h2 class="mb-3 font-weight-bold">十一君的原创诗集</h2>
-                        <div class="d-flex">
-                            <p class="mr-3 text-muted"><i class="fa fa-calendar-alt"></i> 2022-04-21</p>
-                            <p class="mr-3 text-muted"><i class="fa fa-folder"></i> 诗集</p>
-                            <p class="mr-3 text-muted"><i class="fa fa-battery-full"></i> 作者：赵十一 创作于2022 04 09 星期六</p>
-                        </div>
-                        <h3 class="mb-3 font-weight-bold">线结</h3>
-                        <p>人与人的牵绊是条线，</p>
-                        <p>人与人的误会是个结。</p>
-                        <p>如果误会越来越多而放任不管，</p>
-                        <p>结就成了死结，再也无法化解。</p>
-                        <p>线也会从此被弃用，一刀两断。</p>
-                        <hr>
-                        <h3 class="mb-3 font-weight-bold">星星</h3>
-                        <p>天上有千千万万的星星，</p>
-                        <p>只有一颗属于某一个人。</p>
-                        <p>那颗星星只注视那一个人，</p>
-                        <p>而人的眼中却是整片星辰。</p>
-                        <p>但就连星星也不知道，</p>
-                        <p>人之所以眺望整片星辰，</p>
-                        <p>正是因为想要寻找那一颗星，</p>
-                        <p>那一刻独一无二只属于他的那一颗星。</p>
-                        <p>当目光交织之时，</p>
-                        <p>那人眼中的繁星便黯然失色，</p>
-                        <p>只剩那一颗星，</p>
-                        <p>只为他闪烁的那一颗星。</p>
-                        <hr>
-                        <h3 class="mb-3 font-weight-bold">距离</h3>
-                        <p>距离不能产生美，</p>
-                        <p>只能产生隔阂。</p>
-                        <p>再美丽的宝石，</p>
-                        <p>仔细端详都会发现瑕疵。</p>
-                        <p>人人都要求他人尽善尽美，</p>
-                        <p>可人人身上都有不足之处。</p>
-                        <p>人人都排斥他人的不足，</p>
-                        <p>可人人都希望他人接纳自己的不足。</p>
-                        <p>刺猬不能报团取暖，</p>
-                        <p>是因为他们身上的尖刺。</p>
-                        <p>他们珍视他们的刺，</p>
-                        <p>认为能保全他们自身。</p>
-                        <p>他们都不愿拔除身上的刺，</p>
-                        <p>就算在危难面前形同虚设。</p>
-                        <hr>
-                    </div>
-                    <div class="col-12 py-4">
-                        <a href="" class="btn btn-sm btn-outline-primary mb-1">转载</a>
-                        <a href="" class="btn btn-sm btn-outline-primary mb-1">诗歌</a>
-                    </div>
-                </div>
-            </div>-->
             <!-- Blog Detail End -->
                 
             <!-- Footer Start -->
@@ -160,7 +106,7 @@
     <script>
         function LoadBody() {
             var xhr = new XMLHttpRequest(); //第一步：新建对象
-            xhr.open('GET', '/blogs/' + getQueryString("link"), true); //第二步：打开连接
+            xhr.open('GET', '/blogs/' + decodeURI(getQueryString("link"), true)); //第二步：打开连接
             xhr.send(); //发送请求 将请头体写在send中
             /**
              * 获取数据后的处理程序
