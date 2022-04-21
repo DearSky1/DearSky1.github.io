@@ -106,7 +106,7 @@
     <script>
         function LoadBody() {
             var xhr = new XMLHttpRequest(); //第一步：新建对象
-            xhr.open('GET', '/blogs/' + decodeURI(getQueryString("link"), true)); //第二步：打开连接
+            xhr.open('GET', '/blogs/' + getQueryString("link")); //第二步：打开连接
             xhr.send(); //发送请求 将请头体写在send中
             /**
              * 获取数据后的处理程序
@@ -130,7 +130,7 @@
         function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]); return null;
+            if (r != null) return unencodeURIComponent(r[2]); return null;
         } 
 
         window.onload = LoadBody;
