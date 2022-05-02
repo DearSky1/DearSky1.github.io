@@ -88,7 +88,8 @@
             <!-- Page Header End -->
 
             <!-- Blog Detail Start -->
-            <div id="blogdiv">Loading......</div>
+            <div id="blogdiv"><i class="fa fa-spinner"></i>Loading......</div>
+            <iframe hidden src="" width="100%" height="100%" id="iframeblog"><i class="fa fa-spinner"></i>Loading......</iframe>
             <!-- Blog Detail End -->
                 
             <!-- Footer Start -->
@@ -107,26 +108,27 @@
     <!-- JavaScript Libraries -->
     <script>
         function LoadBody() {
-            var xhr = new XMLHttpRequest(); //第一步：新建对象
-            xhr.open('GET', '/blogs/' + getQueryString("link")); //第二步：打开连接
-            xhr.send(); //发送请求 将请头体写在send中
-            /**
-             * 获取数据后的处理程序
-             */
-            xhr.onreadystatechange = function() { //请求后的回调接口，可将请求成功后的逻辑
-                if (xhr.readyState == 4 && xhr.status == 200) { //验证请求是否发送成功
-                    var res = xhr.responseText; //获取到服务端返回的数据
-                    document.getElementById("blogdiv").innerHTML = res;
-                } else {
-                }
-            };
-            //document.getElementById("divNoticeShow").innerHTML = noticeStr + "<br/><button onclick=\"IReadText()\"style=\"width: 100px;height: 50px;\">我已阅读</button>";
-            //window.opener=null;
-            //window.open('','_self');
-            //window.close();
-            //closeWindows();
-            //closeWP();
-            //open(location, '_self').close();
+            if(getQueryString("iframe")=="1"){
+                document.getElementById('iframeblog').src='/blogs/' + getQueryString("link");
+                document.getElementById('blogdiv').hidden = true;
+                document.getElementById('iframeblog').hidden = false;
+            }
+            else{
+                var xhr = new XMLHttpRequest(); //第一步：新建对象
+            var jsstr = "";
+                xhr.open('GET', '/blogs/' + getQueryString("link")); //第二步：打开连接
+                xhr.send(); //发送请求 将请头体写在send中
+                /**
+                 * 获取数据后的处理程序
+                 */
+                xhr.onreadystatechange = function () { //请求后的回调接口，可将请求成功后的逻辑
+                    if (xhr.readyState == 4 && xhr.status == 200) { //验证请求是否发送成功
+                        var res = xhr.responseText; //获取到服务端返回的数据
+                        document.getElementById("blogdiv").innerHTML = res;
+                    } else {
+                    }
+                };
+            }
         }
 
         function getQueryString(name) {
