@@ -1,0 +1,185 @@
+<!-- Blog Detail Start -->
+<div class="container py-5 px-2 bg-white">
+    <style type="text/css">
+        .cardcontainer{
+            width: 100%;
+            height: fit-content;
+        }
+        
+        .card{
+            background-color: rgba(0,0,0,0);
+            background-image: linear-gradient(to bottom right, #5AC8ED, #ECA392,#5AC8ED,#ECA392, #5AC8ED);
+            width:33%;
+            height:100px;
+            float: left;
+            margin:0 auto;
+            padding:10px;
+            border: none;
+        }
+
+        .cardgroup{
+            width: 100%;
+            height: fit-content;
+            color:#777777;
+            font-size:150%;
+        }
+
+        cardgroup{
+            position:relative;
+            top: 30px;
+        }
+
+        .cardinside{
+            height:100%;
+            width: 100%;
+            background-color: #FEFEFE;
+            border-radius: 10px;
+        }
+
+        .cardicon{
+            height: 50%;
+            width:expression(eval("document.getElementsByClassName(\"cardicon\")[0].offsetHeight"));
+            border-radius: 25%;
+            position:absolute;
+            top:25%;
+            bottom:25%;
+            left: 10%;
+        }
+
+        .cardtext{
+            font-size: 70%;
+            overflow: hidden;
+            height: fit-content;
+            width:65%;
+            position:absolute;
+            top:30%;
+            bottom:25%;
+            left: 40%;
+        }
+
+        cardtitle{
+            font-size: 100%;
+            color:#000000;
+            display:block;
+        }
+    </style>
+    <div class="row px-4">
+        <div class="col-12">
+            <img class="img-fluid mb-4" src="/img/MyWebSite1.jpg" alt="Image">
+            <h2 class="mb-3 font-weight-bold">实用网站列表</h2>
+            <div class="d-flex">
+                <p class="mr-3 text-muted"><i class="fa fa-calendar-alt"></i> 2022-05-07</p>
+                <p class="mr-3 text-muted"><i class="fa fa-folder"></i> 网站</p>
+                <p class="mr-3 text-muted"><i class="fa fa-battery-full"></i> 网站列表</p>
+            </div>
+            <p>来看看有没有你喜欢的网站吧。</p>
+            <p>本页面收录的网站与本站没有关联。本页面仅用作分享。</p>
+            <button disabled style="border-radius: 50px;" onclick="function getScrollTop(){ 
+                var scrollTop=0; 
+                if(document.documentElement&&document.documentElement.scrollTop){ 
+                    scrollTop=document.documentElement.scrollTop; 
+                }else if(document.body){ 
+                    scrollTop=document.body.scrollTop; 
+                } 
+                return scrollTop; 
+            } 
+            document.onscroll = function(){
+                console.log(getScrollTop())    
+            }">初始化</button>
+            <div style="position:fixed;right: 1%;top: 30%;width: 7%;height:30%;z-index:100;background-color:#5AC8ED; "></div>
+            <div class="cardcontainer">
+                <div class="cardgroup">
+                    <br>
+                    <cardgroup><i class="fa fa-search"></i>&emsp;搜索引擎</cardgroup><br><br>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/baidu.ico">
+                        <div class="cardtext">
+                            <cardtitle>百度一下，你就知道</cardtitle>
+                            中国最大的搜索引擎
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/bing.jpg">
+                        <div class="cardtext">
+                            <cardtitle>必应</cardtitle>
+                            国际领先的搜索引擎
+                        </div>
+                    </div>
+                </div>
+                <div class="card" display="none">
+                </div>
+                <div class="cardgroup">
+                    <br>
+                    <cardgroup><i class="fa fa-search"></i>&emsp;视频网站</cardgroup><br><br>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/youku.png">
+                        <div class="cardtext">
+                            <cardtitle>优酷</cardtitle>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/bilibili.ico">
+                        <div class="cardtext">
+                            <cardtitle>哔哩哔哩</cardtitle>
+                            B站
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/mgtv.ico">
+                        <div class="cardtext">
+                            <cardtitle>芒果TV</cardtitle>
+                            高清视频在线观看
+                        </div>
+                    </div>
+                </div>
+                <div class="cardgroup">
+                    <br>
+                    <cardgroup><i class="fa fa-search"></i>&emsp;艺术网站</cardgroup><br><br>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/huaban.ico">
+                        <div class="cardtext">
+                            <cardtitle>花瓣</cardtitle>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/bilibili.ico">
+                        <div class="cardtext">
+                            <cardtitle>哔哩哔哩</cardtitle>
+                            B站
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardinside">
+                        <img class="cardicon" src="/img/0WebsiteList/mgtv.ico">
+                        <div class="cardtext">
+                            <cardtitle>芒果TV</cardtitle>
+                            高清视频在线观看
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 py-4">
+            <a href="" class="btn btn-sm btn-outline-primary mb-1">首发</a>
+            <a href="" class="btn btn-sm btn-outline-primary mb-1">日记</a>
+        </div>
+    </div>
+</div>
+<!-- Blog Detail End -->
