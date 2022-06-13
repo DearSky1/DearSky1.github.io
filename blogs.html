@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog-DearSky</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
 
-        <!-- Favicon -->
-        <link href="/img/favicon.ico" rel="icon">
+<head>
+    <meta charset="utf-8">
+    <title>Blog-DearSky</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
 
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="/css/style.css" rel="stylesheet">
-    </head>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
 
 <body>
     <div class="wrapper">
@@ -27,7 +28,7 @@
                 <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="/img/profile.jpg" alt="Image">
                 <h1 class="font-weight-bold">雨空</h1>
                 <p class="mb-4">
-                    喜欢清晨的风，好像什么都可以重新来过。 
+                    喜欢清晨的风，好像什么都可以重新来过。
                 </p>
                 <div class="d-flex justify-content-center mb-5">
                     <a class="btn btn-outline-primary mr-2" href="#"><i class="fab fa-github"></i></a>
@@ -91,7 +92,7 @@
             <div id="blogdiv"><i class="fa fa-spinner"></i>Loading......</div>
             <iframe hidden src="" width="100%" height="100%" id="iframeblog"><i class="fa fa-spinner"></i>Loading......</iframe>
             <!-- Blog Detail End -->
-                
+
             <!-- Footer Start -->
             <div class="container py-4 bg-secondary text-center">
                 <p class="m-0 text-white">
@@ -101,31 +102,31 @@
             <!-- Footer End -->
         </div>
     </div>
-        
+
     <!-- Back to Top -->
     <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script>
         function LoadBody() {
-            if(getQueryString("iframe")=="1"){
-                document.getElementById('iframeblog').src='/blogs/' + getQueryString("link");
+            if (getQueryString("iframe") == "1") {
+                document.getElementById('iframeblog').src = '/blogs/' + getQueryString("link");
                 document.getElementById('blogdiv').hidden = true;
                 document.getElementById('iframeblog').hidden = false;
-            }
-            else{
+            } else {
                 var xhr = new XMLHttpRequest(); //第一步：新建对象
-            var jsstr = "";
+                var jsstr = "";
                 xhr.open('GET', '/blogs/' + getQueryString("link")); //第二步：打开连接
                 xhr.send(); //发送请求 将请头体写在send中
                 /**
                  * 获取数据后的处理程序
                  */
-                xhr.onreadystatechange = function () { //请求后的回调接口，可将请求成功后的逻辑
+                xhr.onreadystatechange = function() { //请求后的回调接口，可将请求成功后的逻辑
                     if (xhr.readyState == 4 && xhr.status == 200) { //验证请求是否发送成功
                         var res = xhr.responseText; //获取到服务端返回的数据
                         document.getElementById("blogdiv").innerHTML = res;
                     } else {
+                        document.getElementById("blogdiv").innerHTML = xhr.status;
                     }
                 };
             }
@@ -134,8 +135,9 @@
         function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
-            if (r != null) return decodeURIComponent(r[2]); return null;
-        } 
+            if (r != null) return decodeURIComponent(r[2]);
+            return null;
+        }
 
         window.onload = LoadBody;
     </script>
@@ -151,4 +153,5 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
 </body>
+
 </html>
